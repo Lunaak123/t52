@@ -1,0 +1,301 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.operations-panel {
+    background-color: #e3f2fd;
+    padding: 10px;
+    border-bottom: 2px solid #1565c0;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.partition {
+    flex: 1;
+    padding: 5px;
+    border-right: 1px solid #b0bec5;
+}
+
+.partition:last-child {
+    border-right: none;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.input-group label {
+    flex: 0 0 90px; /* Ensures consistent label width */
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 5px;
+    color: #1565c0; /* Enhances label visibility */
+}
+
+.input-group input,
+.input-group select {
+    font-size: 12px;
+    padding: 4px;
+    width: 70px;
+    text-align: center;
+    border: 1px solid #90caf9;
+    border-radius: 3px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #1565c0;
+    box-shadow: 0px 0px 5px rgba(21, 101, 192, 0.5);
+}
+
+.range-dash {
+    padding: 0 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.apply-section {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.apply-button {
+    background-color: #43a047;
+    color: white;
+    padding: 6px 14px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: #388e3c;
+}
+
+#sheet-content {
+    margin-top: 180px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-x: auto;
+}
+
+.download-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.download-section button {
+    background-color: #1565c0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-section button:hover {
+    background-color: #0d47a1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.modal-content button {
+    background-color: #1565c0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.modal-content button:hover {
+    background-color: #0d47a1;
+}
+.input-group input#row-range-from,
+.input-group input#row-range-to {
+    width: 50px; /* Reduced width for Row Range text boxes */
+}
+/* Remove gap between labels and input boxes */
+.input-group label {
+    flex: 0 0 auto; /* Adjust label width */
+    margin-right: 2px; /* Minimize gap between label and input */
+}
+
+/* Margin for the entire operations panel on the right side */
+.operations-panel {
+    margin-right: 30px; /* Add a right margin */
+}
+.operations-panel {
+    background-color: #e3f2fd;
+    padding: 10px;
+    border-bottom: 2px solid #1565c0;
+    width: calc(100% - 40px); /* Overall width adjustment for centering */
+    margin: 0 auto; /* Centers the panel by applying equal left and right margins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.apply-section {
+    text-align: right;
+    margin: 0 20px; /* Same left and right margin as .operations-panel */
+    margin-top: 10px;
+}
+.operations-panel {
+    background: linear-gradient(135deg, #d1e3f0, #a3b8d9); /* Subtle gradient for a toolbar look */
+    padding: 10px;
+    border-bottom: 2px solid #0a4972; /* Darker border to mimic toolbar edge */
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    color: #0a4972; /* Text color to match toolbar style */
+}
+
+.partition {
+    background-color: #f7f9fc; /* Slightly lighter background inside each partition */
+    padding: 8px;
+    border-right: 1px solid #b0bec5;
+    border-radius: 3px;
+}
+
+.partition:last-child {
+    border-right: none;
+}
+.operations-panel {
+    background: linear-gradient(90deg, #d6dee1, #bcc8cc); /* Metallic silver/blue gradient */
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.partition {
+    background-color: #f1f5f8; /* Soft contrast with main panel */
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1); /* Inset shadow for depth */
+}
+
+.input-group label {
+    color: #2f4f4f; /* Dark Slate Gray for readability */
+}
+
+.input-group input,
+.input-group select {
+    border: 1px solid #a9aeb1; /* Subtle border color */
+    background-color: #ffffff;
+}
+
+.apply-button {
+    background-color: #4a90e2; /* Light blue button color */
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: #357abd; /* Slightly darker blue on hover */
+}
+#sheet-content {
+    margin-top: 240px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+
+table, th, td {
+    border: 1px solid #999;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
